@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="/images/favicon.ico" rel="icon" />
+  <link href="/css/ie10-viewport-bug-workaround.css" rel="stylesheet" />
+  <title>Descentralizado</title>
+<link href="main.6cfdd60c6d0446e78031.css" rel="stylesheet"></head>
+
+<body class="dark">
+
+  <nav class="navbar navbar-light navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+      Descentraliza<span class="text-primary">DO</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-divider"></li>
+        <li class="theme-selector nav-item">
+          <a class="nav-link" href="javascript:;" onclick="document.querySelector('body').classList.remove('light'); document.querySelector('body').classList.add('dark');">
+            <i class="fa fa-square" aria-hidden="true"></i>
+          </a>
+          <a class="nav-link" href="javascript:;" onclick="document.querySelector('body').classList.remove('dark'); document.querySelector('body').classList.add('light');">
+            <i class="far fa-square" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li class="nav-divider"></li>
+        <li class="nav-item dropdown" id="tokensDropdown"></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="nav-item chat-button">
+          <a href="javascript:;" class="nav-link js-gitter-toggle-chat-button">
+            <i class="far fa-comments"></i>
+            <span class="trn">chat</span>
+        </a>
+        </li>
+        <li class="nav-item dropdown" id="helpDropdown"></li>
+        <li class="nav-item dropdown" id="tokenGuidesDropdown"></li>
+        <li class="nav-item dropdown" id="connection"></li>
+        <li class="nav-item dropdown" id="languages"></li>
+        <li class="nav-item dropdown" id="accounts"></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="trading-cont">
+    <div class="vertical-split">
+      <div class="component">
+        <div class="component-header trn">balance</div>
+        <div id="balance"></div>
+      </div>
+      <div class="component">
+        <div class="component-header trn">buy_sell</div>
+        <div class="component-tabs nav-header">
+          <ul class="nav" role="tablist">
+            <li role="presentation" class="nav-item">
+              <a href="#buy" aria-controls="buy" role="tab" data-toggle="tab" class="active nav-link trn">buy</a>
+            </li>
+            <li role="presentation" claxss="nav-item">
+              <a href="#sell" aria-controls="sell" role="tab" data-toggle="tab" class="nav-link trn">sell</a>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="buy"></div>
+          <div role="tabpanel" class="tab-pane" id="sell"></div>
+        </div>
+      </div>
+    </div>
+    <div class="vertical">
+      <div class="component component-full">
+        <div class="component-header trn">order_book</div>
+        <div id="orders"></div>
+      </div>
+    </div>
+    <div class="vertical-split">
+      <div class="component">
+        <div class="component-header trn">price_chart</div>
+        <div id="chartPrice"></div>
+      </div>
+      <div class="component">
+        <div class="component-header trn">my_transactions</div>
+        <div class="component-tabs nav-header">
+          <ul class="nav" role="tablist">
+            <li role="presentation" class="nav-item">
+              <a href="#myTrades" aria-controls="myTrades" role="tab" data-toggle="tab" class="active nav-link trn">trades</a>
+            </li>
+            <li role="presentation" class="nav-item">
+              <a href="#myOrders" aria-controls="myOrders" role="tab" data-toggle="tab" class="nav-link trn">orders</a>
+            </li>
+            <li role="presentation" class="nav-item">
+              <a href="#myFunds" aria-controls="myFunds" role="tab" data-toggle="tab" class="nav-link trn">funds</a>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="myTrades"></div>
+          <div role="tabpanel" class="tab-pane" id="myOrders"></div>
+          <div role="tabpanel" class="tab-pane" id="myFunds"></div>
+        </div>
+      </div>
+    </div>
+    <div class="vertical-split">
+      <div class="component">
+        <div class="component-header trn">trades_and_volume</div>
+        <div class="component-tabs nav-header">
+          <ul class="nav" role="tablist">
+            <li role="presentation" class="nav-item">
+              <a href="#trades" aria-controls="buy" role="tab" data-toggle="tab" class="active nav-link trn">trades</a>
+            </li>
+            <li role="presentation" class="nav-item">
+              <a href="#volume" aria-controls="sell" role="tab" data-toggle="tab" class="nav-link trn">volume</a>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="trades"></div>
+          <div role="tabpanel" class="tab-pane" id="volume"></div>
+        </div>
+      </div>
+      <div class="component">
+        <div class="component-header">
+          <span class="trn">updates</span>
+        </div>
+        <div class="component-tabs nav-header">
+          <ul class="nav" role="tablist">
+            <li role="presentation" class="nav-item">
+              <a href="#important" aria-controls="info" role="tab" data-toggle="tab" class="active nav-link trn">important</a>
+            </li>
+            <li role="presentation" class="nav-item">
+              <a href="#twitter" aria-controls="twitter" role="tab" data-toggle="tab" class="nav-link">Twitter</a>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="important">
+            <div>
+              <p class="text-danger">Notificaciones</p>
+              <p>
+                Nuestro único enlace oficial es https://enlace.io/descentralizado, recomendamos usar el Bookmark
+              </p>
+              <p>
+                No envíe monedas directas al contrato o las perderá, sin posibilidad de recuperación. Utilice la opción de depositar
+                en la esquina izquierda.
+              </p>
+              <p>
+                El único representante oficial en la sala es RDo Coin.
+              </p>
+              <p class="text-danger">Descargo</p>
+              <p>
+                Descentralizdo es una plataforma de intercambio que te permite hacer intercambios de Ethereum y monedas basadas en Ethereum.
+                Cada usuario es responsable de sus propias cuentas y llaves privadas. También es responsable de las
+                decisiones que haya tomado en cuánto al intercambio, detalles y mecanismos de tokens que desee intercambiar
+                Descentralizado y RDo Coin, no es responsable de sus intercambios en esta plataforma. Descentralizado no almacena
+                ninguna moneda, ni almacena ningún token, por tanto no ofrecemos reembolsos.
+                A pesar que nuestra información es actualizada constantemente, no somos responsables de informaciones provistas
+                por terceros o fueras de fechas establecidas.
+
+              </p>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="twitter">
+            <a class="twitter-timeline" href="https://twitter.com/rdo_coin" data-chrome="noheader nofooter transparent">Tweets de RDo Coin</a>
+            <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="buyTrade"></div>
+  <div id="sellTrade"></div>
+  <div id="importAccount"></div>
+  <div id="otherToken"></div>
+  <div id="gasPrice"></div>
+  <div id="tokenGuide"></div>
+  <div id="screencast"></div>
+  <div id="ledger"></div>
+
+  <script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+  <script src="/js/jquery.translate.js" type="text/javascript"></script>
+  <script src="/js/alertify.min.js" type="text/javascript"></script>
+  <script src="/js/ejs_production.js" type="text/javascript"></script>
+  <script src="/js/chrome-u2f-api.js" type="text/javascript"></script>
+  <script src="/js/ledger.min.js" type="text/javascript"></script>
+
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-124430265-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <script>
+    ((window.gitter = {}).chat = {}).options = {
+      room: 'etherdelta/etherdelta.github.io',
+      activationElement: false
+    };
+  </script>
+  <script src="/js/sidecar.v1.js" async defer></script>
+<script type="text/javascript" src="main.6cfdd60c6d0446e78031.js"></script></body>
+
+</html>

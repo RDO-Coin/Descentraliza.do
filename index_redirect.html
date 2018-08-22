@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<meta charset="utf-8">
+<title>Redirigiendo</title>
+<link rel="canonical" href="https://etherdelta.com/">
+<meta http-equiv="refresh" content="0; url=https://etherdelta.com/">
+<h1>Redirigiendo...</h1>
+<a href="https://etherdelta.com/">Haz click aquí si no haz sido dirigido.</a>
+<script>
+  q = (location.search && !location.search.indexOf('?')) ? '' : '';
+  h = (location.hash && !location.hash.indexOf('#')) ? '' : '';
+  location.replace("https://etherdelta.com/" + (q + location.search + h + location.hash));
+</script>
+</html>
